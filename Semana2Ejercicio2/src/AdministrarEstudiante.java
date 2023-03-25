@@ -3,9 +3,6 @@ import java.util.ArrayList;
 public class AdministrarEstudiante extends Estudiante {
 
     // Atributos
-
-    //ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
     ArrayList<Estudiante> estudiantes = new ArrayList<>();
 
     public AdministrarEstudiante(String identificacionPersona, String nombre, String sexo, int edad, String raza, String estatura, String identificacionEstudiantil, String grado, String jornadaDeEstudio) {
@@ -43,13 +40,5 @@ public class AdministrarEstudiante extends Estudiante {
         }
         return estudianteHallado;
     }
-
-    /*
-    public ArrayList<String> consultarMaterias(String idEstudiantil){
-        this.identificacionEstudiantil = idEstudiantil;
-        return this.materias;
-    }
-
-     */
 
 }
