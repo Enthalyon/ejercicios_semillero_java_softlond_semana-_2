@@ -38,6 +38,10 @@ public class AdministrarEstudiante extends Estudiante {
                 estudianteHallado = estudiante;
             }
         }
+
+        if(estudianteHallado == null){
+            throw new RuntimeException("Estudiante no hallado");
+        }
         return estudianteHallado;
     }
 
