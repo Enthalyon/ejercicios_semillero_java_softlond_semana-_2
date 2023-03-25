@@ -6,26 +6,42 @@ public class AdministrarEstudiante extends Estudiante {
 
     //ArrayList<Estudiante> estudiantes = new ArrayList<>();
 
-    ArrayList<String> estudiantes = new ArrayList<>();
+    ArrayList<Estudiante> estudiantes = new ArrayList<>();
+
+    public AdministrarEstudiante(String identificacionPersona, String nombre, String sexo, int edad, String raza, String estatura, String identificacionEstudiantil, String grado, String jornadaDeEstudio) {
+        super(identificacionPersona, nombre, sexo, edad, raza, estatura, identificacionEstudiantil, grado, jornadaDeEstudio);
+    }
+
+    public AdministrarEstudiante(String identificacionPersona, String nombre, String sexo, int edad, String raza, String estatura, String identificacionEstudiantil, ArrayList<String> materias, String grado, String jornadaDeEstudio) {
+        super(identificacionPersona, nombre, sexo, edad, raza, estatura, identificacionEstudiantil, materias, grado, jornadaDeEstudio);
+    }
 
     //Constructores
 
 
 
     //Metodos
-    public void inscribirEstudiante(int idEstudiante, String nombreEstudiante){
-        estudiantes.add(idEstudiante,nombreEstudiante);
+    public void inscribirEstudiante(Estudiante estudiante){
+        estudiantes.add(estudiante);
     }
 
-    public void inscribirmateriaAEstudiante(){
-        inscribirMaterias(estudiantes);
-        materias.set(this.estudiantes);
-        estudiantes.add(idEstudiante,nombreEstudiante);
+    public void inscribirmateriaAEstudiante(String id, ArrayList<String> materias){
+        for (Estudiante estudiante: estudiantes) {
+            if(estudiante.compararids(id)){
+                estudiante.inscribirMaterias(materias);
+            }
+        }
     }
 
-    public void consultarMaterias(int idEstudiante){
-        estudiantes.get(idEstudiante);
+    public Estudiante consultarMateriasPorEstudiante(String idEstudiante){
+        Estudiante estudianteHallado = null;
 
+        for (Estudiante estudiante: estudiantes) {
+            if(estudiante.compararids(idEstudiante)){
+                estudianteHallado = estudiante;
+            }
+        }
+        return estudianteHallado;
     }
 
     /*
